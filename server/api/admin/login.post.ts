@@ -2,7 +2,7 @@ import { loginAdmin } from "~/server/services/admin"
 import {createToken} from "~/server/utils/session";
 
 export default defineEventHandler(async (event) => {
-	const db = useDatabase();
+	const db = useDatabase()
 	const body = await readBody(event)
 	const user = await loginAdmin(body)
 	const token = await createToken(user)
